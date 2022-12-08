@@ -1,15 +1,13 @@
 package com.project.mytaxapp.mytaxapp.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AccountantController {
-	 @RequestMapping(value = {"/accountant/dashboard"}, method = RequestMethod.GET)
-	    public String adminHome(){
-	        return "accountant/dashboard";
-	    }
-	
+	@GetMapping("/accountant/dashboard")
+	public String dashboard() {
+		return "accountant/dashboard";
+	}
 
 }
