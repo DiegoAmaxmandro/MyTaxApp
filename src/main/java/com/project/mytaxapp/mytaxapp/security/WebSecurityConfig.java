@@ -15,18 +15,23 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import com.project.mytaxapp.mytaxapp.service.UserServiceImpl;
 
+//This is the configuration of the spring security.
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig {
-
+	
+	//This is injection of the class of configuration "CustomLoginSucessHandler".
     @Autowired
     private CustomLoginSucessHandler sucessHandler;
-
+    
+    
     @Bean
     public UserDetailsService userDetailsService() {
         return new UserServiceImpl();
     }
-
+    
+  
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -47,17 +52,17 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
+    //This method is where all the security permissions will go though as the matches pages for accountants and users, the access of the
+    //browser to the css or images files, the path to the login and register pages.
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
                 http.authorizeRequests()
-                // URL matching for accessibility
                 .antMatchers("/", "/login","/register","/css/**", "/img/**").permitAll()
                 .antMatchers("/accountant/**").hasAnyAuthority("ACCOUNTANT")
                 .antMatchers("/user/**").hasAnyAuthority("USER")
                 .anyRequest().authenticated()
                 .and()
-                // form login
                 .csrf().disable().formLogin()
                 .loginPage("/login")
                 .failureUrl("/login?error=true")
@@ -65,7 +70,6 @@ public class WebSecurityConfig {
                 .usernameParameter("email")
                 .passwordParameter("password")
                 .and()
-                // logout
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
                 .logoutSuccessUrl("/login")

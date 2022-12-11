@@ -16,9 +16,12 @@ import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 
+//This is the configuration of the spring security.
+
 @Configuration
 public class CustomLoginSucessHandler extends SimpleUrlAuthenticationSuccessHandler{
 	
+	//This method is to handle the authentication of the users, to allowed them to enter on the application. 
 	@Override
     protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
     throws IOException {
@@ -27,7 +30,8 @@ public class CustomLoginSucessHandler extends SimpleUrlAuthenticationSuccessHand
         RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
         redirectStrategy.sendRedirect(request, response, targetUrl);
     }
-
+	
+	//This method just directs the authenticated user to views that they are allowed according to their role.
     protected String determineTargetUrl(Authentication authentication){
         String url = "/login?error=true";
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();

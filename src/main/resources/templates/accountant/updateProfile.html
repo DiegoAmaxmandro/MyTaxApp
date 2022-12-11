@@ -6,6 +6,9 @@
 <link th:href="@{/css/profile.css}" rel="stylesheet" />
 <title>MyTaxApp</title>
 
+<!-- This is the form page to update a profile.
+	Through the thymeleaf attributes the page gets images and other pages links.  -->
+	
 </head>
 <body>
 
@@ -54,10 +57,6 @@
 				<div class="input-box">
 					<label for="language">Language</label>
 					<input th:field="*{language}" th:errorclass="is-invalid" placeholder="language">
-				</div>
-				<div class="input-box">
-					<label for="picture">Picture</label>
-					<input th:field="*{picture}" th:errorclass="is-invalid" placeholder="picture">
 				</div>
 				<div class="input-box">
 					<label for="price">Price</label>

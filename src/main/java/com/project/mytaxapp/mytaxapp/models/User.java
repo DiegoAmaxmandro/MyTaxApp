@@ -26,6 +26,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+//This is the model that contains the user's and account's data.
+
 @Entity
 @Table(name = "users")
 public class User implements UserDetails  {

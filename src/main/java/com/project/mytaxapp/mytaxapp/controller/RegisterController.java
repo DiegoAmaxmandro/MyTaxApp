@@ -11,19 +11,22 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.project.mytaxapp.mytaxapp.models.User;
 import com.project.mytaxapp.mytaxapp.service.UserService;
 
+//This controller maps the view of the register form.
 
 @Controller
 public class RegisterController {
-	
+	//This is a implementation of the user service.
 	@Autowired
     UserService userService;
-
+	
+	//This method maps the view of the register form.
 	@RequestMapping(value = {"/register"}, method = RequestMethod.GET)
     public String register(Model model){
         model.addAttribute("user", new User());
         return "/register";
     }
 
+	//This method is to save the new user through the "userService" methods.
     @RequestMapping(value = {"/register"}, method = RequestMethod.POST)
     public String registerUser(Model model, @Valid User user, BindingResult bindingResult){
         if(bindingResult.hasErrors()){

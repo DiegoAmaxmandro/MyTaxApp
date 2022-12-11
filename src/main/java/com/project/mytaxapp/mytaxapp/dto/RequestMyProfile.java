@@ -1,12 +1,13 @@
 package com.project.mytaxapp.mytaxapp.dto;
 
-
-
 import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 
 import com.project.mytaxapp.mytaxapp.models.AccountantsProfile;
+
+//This dto was created to save and show the profile informations, now it's only used to show the profiles information on the user's views
+// because on the accounts views it's been used the profile service with its methods.
 
 public class RequestMyProfile {
 	@NotBlank(message = "Name cannot be empty")
@@ -98,7 +99,6 @@ public class RequestMyProfile {
 		accountantsProfile.setPhone(phone);
 		accountantsProfile.setSpecialty(specialty);
 		accountantsProfile.setLanguage(language);
-		accountantsProfile.setPicture(picture);
 		accountantsProfile.setPrice(price);
 		accountantsProfile.setAboutYou(aboutYou);
 		return accountantsProfile;

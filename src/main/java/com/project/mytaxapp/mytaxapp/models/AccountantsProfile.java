@@ -14,6 +14,8 @@ import javax.validation.constraints.NotBlank;
 
 import org.hibernate.validator.constraints.Length;
 
+//This is the model that contains the profiles data.
+
 @Entity
 @Table(name = "accountants")
 public class AccountantsProfile {
@@ -46,8 +48,6 @@ public class AccountantsProfile {
 	
 	@NotBlank(message = "Language cannot be empty")
 	private String language;
-	
-	private String picture;
 	
 	private String price;
 	
@@ -106,12 +106,7 @@ public class AccountantsProfile {
 	public void setLanguage(String language) {
 		this.language = language;
 	}
-	public String getPicture() {
-		return picture;
-	}
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
+	
 	public String getPrice() {
 		return price;
 	}

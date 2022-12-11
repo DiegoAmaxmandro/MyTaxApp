@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.project.mytaxapp.mytaxapp.service.UserService;
 
+//This controller maps the view of the login form.
 
 @Controller
 public class LoginController {

@@ -7,13 +7,15 @@
 	<link th:href="@{/css/dash.css}" rel="stylesheet" />
 	<title>MyTaxApp</title>
 	
+	<!-- This is the user's dashboard html page.
+	Through the thymeleaf attributes the pages receive images and other pages links  -->
+	
 </head>
 
 <body>
 	<header class="header">
 		<img class="logo" th:src="@{/img/logo.png}" height="100" width="100">
 		<nav class="navbar">
-			<!--<p class="navitem">Welcome Back  <span sec:authentication="name"></span></p>-->
 			<a th:href="@{/user/listaccount}" class="navitem">Find An Accountant</a>
 			<a th:href="@{/logout}" class="navitem">Logout</a>
 		</nav>

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.mytaxapp.mytaxapp.models.User;
 
+//This is the interface with the methods to be implemented on "UserServiceImpl".
 @Service
 public interface UserService {
 	

@@ -3,8 +3,11 @@
 <head >
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"> -->
 <link th:href="@{/css/profile.css}" rel="stylesheet" />
 <title>MyTaxApp</title>
+<!-- This is the form page to register a new profile.
+	Through the thymeleaf attributes the page gets images and other pages links.  -->
 
 </head>
 <body>
@@ -23,45 +26,52 @@
 					<div class="login-button">
 						<button><a th:href="@{/accountant/dashboard}">Dashboard</a></button>
 					</div>
+					
 			</div>
 			<div class="input-group">
 				<div class="input-box">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('name')}"><label class="validation-message" th:errors="*{name}"></label></div>
 					<label for="name">First Name</label>
-					<input th:field="*{name}"  th:errorclass="is-invalid" placeholder="first name">
+					<input th:field="*{name}" th:errorclass="is-invalid" placeholder="first name">	
 				</div>
 				<div class="input-box">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('lastName')}"><label class="validation-message" th:errors="*{lastName}"></label></div>
 					<label for="lastName">Last Name</label>
 					<input th:field="*{lastName}" th:errorclass="is-invalid" placeholder="last name">
 				</div>
 				<div class="input-box">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('email')}"><label class="validation-message" th:errors="*{email}"></label></div>
 					<label for="email">Email</label>
 					<input th:field="*{email}"  th:errorclass="is-invalid"  placeholder="email">
+					
 				</div>
 				<div class="input-box">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('city')}"><label class="validation-message" th:errors="*{city}"></label></div>
 					<label for="city">City</label>
 					<input th:field="*{city}" th:errorclass="is-invalid" placeholder="city">
 				</div>
 				<div class="input-box">
+					<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('phone')}"><label class="validation-message" th:errors="*{phone}"></label></div>
 					<label for="phone">Phone</label>
 					<input th:field="*{phone}" th:errorclass="is-invalid" placeholder="Phone Number">
 				</div>
 				<div class="input-box">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('specialty')}"><label class="validation-message" th:errors="*{specialty}"></label></div>
 					<label for="specialty">Specialty</label>
 					<input th:field="*{specialty}" th:errorclass="is-invalid" placeholder="specialty">
 				</div>
 				<div class="input-box">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('language')}"><label class="validation-message" th:errors="*{language}"></label></div>
 					<label for="language">Language</label>
 					<input th:field="*{language}" th:errorclass="is-invalid" placeholder="language">
 				</div>
 				<div class="input-box">
-					<label for="picture">Picture</label>
-					<input th:field="*{picture}" th:errorclass="is-invalid" placeholder="picture">
-				</div>
-				<div class="input-box">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('price')}"><label class="validation-message" th:errors="*{price}"></label></div>
 					<label for="price">Price</label>
 					<input th:field="*{price}" th:errorclass="is-invalid" placeholder="price">
 				</div>
 				<div class="input-box">
+				<div class="alert alert-danger" role="alert" th:if="${#fields.hasErrors('aboutYou')}"><label class="validation-message" th:errors="*{aboutYou}"></label></div>
 					<label for="aboutYou">About you</label>
 					<textarea th:field="*{aboutYou}" th:errorclass="is-invalid" placeholder="about you"></textarea>
 				</div  >

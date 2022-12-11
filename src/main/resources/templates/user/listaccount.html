@@ -3,24 +3,41 @@
 
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">	
 	<link th:href="@{/css/findaccountant.css}" rel="stylesheet" />
 	<title>MyTaxApp</title>
 
-
+<!-- This is the user's html page to see the accountant's profiles.
+	Through the thymeleaf attributes the pages receive images and other pages links.  -->
 
 </head>
 <body>
 	<header class="header">
 		<img class="logo" th:src="@{/img/logo.png}" height="100" width="100">
 		<nav class="navbar">
-			<!--<p class="navitem">Welcome Back  <span sec:authentication="name"></span></p>-->
-			<a th:href="@{/user/listaccount}" class="navitem">Find An Accountant</a>
+			<a th:href="@{/dashboard}" class="navitem">Dashboard</a>
 			<a th:href="@{/logout}" class="navitem">Logout</a>
 		</nav>
 	
 	</header>
+	
+	<div class="search">
+		<form th:object="${accProfile}" class="search-form" method="GET"
+			th:action="@{/user/specialty}">
+			<input class="form-control" placeholder="Search for a specialty here"
+				autofocus="autofocus" name="specialty"></input>
+			<div class="search-button">
+				<button type="submit" class="btn btn-primary" value="Search">Search</button>
+			</div>
+
+		</form>
+
+
+
+	</div>
 
 	<main class="content">
+	<!-- With the thymeleaf loop, going trhough the accountant's object showing the profiles saved on the database.  -->
 		<div th:each="accountants : ${accountants}" class="container">
 		
 		
@@ -31,7 +48,6 @@
 			<div class="info" th:text="${accountants.phone}"></div>
 			<div class="info" th:text="${accountants.specialty}"></div>
 			<div class="info" th:text="${accountants.language}"></div>
-			<div class="img"  th:text="${accountants.picture}"></div>
 			<div class="info" th:text="${accountants.price}"></div>
 			<div class="info" th:text="${accountants.aboutYou}"></div>
 		

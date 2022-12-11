@@ -41,7 +41,7 @@ body {
 }
 
 .container {
-    width: 65%;
+    width: 45%;
     height: 35vh;
     display: flex;
     justify-content: center;
@@ -49,14 +49,18 @@ body {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
     background:  #FFF2E7;
     margin-top: 1.5rem;
-    padding: 0.4rem 2rem;
+    padding: 10.0rem 3rem;
     border-radius: 10px;
+    
     	   
 }
 
 .info{
 	
 	font-family: 'Sarala', sans-serif;
+	display: flex;
+	justify-content:flex-start;
+
 	
 }
 .name{
@@ -64,5 +68,45 @@ body {
 	font-weight: 400;
 	font-size: 24px;
 	margin-top: 0px;
+	
+}
+.search{
+	
+	 display: flex;
+	 justify-content:center;
+}
+
+.search-form{
+	 width: 50%;
+	 padding: 0.4rem 4rem;
+	 font-family: 'Sarala', sans-serif;
+	 display: flex;
+	 flex-direction: row;
+	 justify-content:center;
+}
+.search-button{
+	background-color: none;
+	width: 10%;
+	height: 5vh;
+	border-radius: 6px;
+	
+	
+}
+
+.edit{
+	position: absolut;
+	bottom: 0;
+	right: 0;
+	
+	
+	
+}
+
+.delete{
+	position: absolut;
+	bottom: 0;
+	right: 0;
+	top: 0;
+	
 }
 

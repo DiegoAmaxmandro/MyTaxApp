@@ -6,7 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link th:href="@{/css/dash.css}" rel="stylesheet" />
 	<title>MyTaxApp</title>
-	
+	<!-- This is the accountant's dashboard html page.
+	Through the thymeleaf attributes the pages receive images and other pages links  -->
 </head>
 
 <body>
@@ -14,9 +15,7 @@
 		
 		<img class="logo" th:src="@{/img/logo.png}" height="100" width="100">
 		<nav class="navbar" >
-			<!--<a th:href="@{/accountant/profileForm}" class="navitem">My Profile</a>-->
-			<a  th:href="@{/accountant/myProfile}" class="navitem">My Profile</a> 
-			<a class="navitem">My Agenda</a>
+			<a  th:href="@{/accountant/myProfile}" class="navitem">Profiles</a> 
 			<a th:href="@{/logout}" class="navitem">Logout</a>
 			
 		</nav>
@@ -28,7 +27,7 @@
 		<section class="primary-content">
 			<div class="hcontent">
 				<h1 class="h1">MyTaxApp</h1>
-				<h2 class="h2">We are here to help you to organize your taxes.</h2>
+				<h2 class="h2">Here you can be found by anyone who needs your help.</h2>
 			</div>
 			
 			<img class="img" th:src="@{/img/dash1.svg}" height="800" width="800">
