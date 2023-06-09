@@ -1,4 +1,4 @@
-# mytaxapp
+# Mytaxapp
 Mytaxapp is a comprehensive web application designed to assist individuals seeking professional assistance with their personal taxes. It was meticulously developed as part of the Design module for the Higher Diploma in Computer Science program at the esteemed National College of Ireland.
 
 # Built With
