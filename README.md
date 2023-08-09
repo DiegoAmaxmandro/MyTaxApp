@@ -5,7 +5,7 @@ Mytaxapp is a comprehensive web application designed to assist individuals seeki
 - Backend: Java, Spring Framework (Spring Web, JPA, Spring Security, MySQL, Thymeleaf).
 - Frontend: HTML5 and CSS.
 
-#Usage
+# Usage
 ## User
 - Register/Login: You can register for free on the mytaxapp. After you login, you will be able to search for an accountant and analyze his profile, get to his expertise and then contact him.
 
